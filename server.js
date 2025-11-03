@@ -44,6 +44,7 @@ app.get('/check-env', (req, res) => {
   res.json({
     message: "Checking environment variables on Render server",
     node_env: process.env.NODE_ENV,
+    isProduction: isProd,
     server_key_exists: !!process.env.MIDTRANS_SERVER_KEY,
     server_key_preview: process.env.MIDTRANS_SERVER_KEY?.substring(0, 15) + '...',
     client_key_exists: !!process.env.MIDTRANS_CLIENT_KEY,
@@ -169,3 +170,4 @@ app.listen(port, () => {
   console.log(`📱 Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log(`🌐 Midtrans mode: ${snap.apiConfig?.isProduction ? 'Production' : 'Sandbox'}`);
 });
+
