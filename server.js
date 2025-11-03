@@ -36,7 +36,7 @@ if (!process.env.MIDTRANS_SERVER_KEY || !process.env.MIDTRANS_CLIENT_KEY) {
 
 // Midtrans config YANG SUDAH DIPERBAIKI
 const snap = new midtransClient.Snap({
-  isProduction: process.env.NODE_ENV === 'production',
+  isProduction: process.env.NODE_ENV === 'development',
   serverKey: process.env.MIDTRANS_SERVER_KEY,
   clientKey: process.env.MIDTRANS_CLIENT_KEY
 });
@@ -183,4 +183,5 @@ app.listen(port, () => {
   console.log(`🚀 Server running at http://localhost:${port}`);
   console.log(`📱 Environment: ${process.env.NODE_ENV || 'development'}`);
 });
+
 
